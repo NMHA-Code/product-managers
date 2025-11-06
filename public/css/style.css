@@ -1,0 +1,151 @@
+.header{
+    border-bottom: 3px solid #ddd;
+    padding: 10px 0;
+}
+.header .inner-logo img{
+    max-height: 50px;
+    max-width: 50px;
+}
+.header .inner-menu > ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.header .inner-menu > ul > li{
+    margin-left: 20px;
+}
+.footer{
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Product */
+/* Layout / card */
+.product-item {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(18,38,63,0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(18,38,63,0.12);
+}
+
+/* Image area */
+.product-item .inner-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(180deg,#fafafa,#fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-item .inner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.product-item:hover .inner-image img {
+  transform: scale(1.06);
+}
+
+/* Content area */
+.product-item .inner-content {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+}
+
+/* Title and price row */
+.inner-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0f1724;
+  font-weight: 600;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Prices */
+.inner-price-new {
+  color: #e63946;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.inner-price-old {
+  color: #6b7280;
+  font-size: 0.875rem;
+  text-decoration: line-through;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Discount badge */
+.inner-discount {
+  display: inline-block;
+  background: linear-gradient(180deg,#12b886,#0ea57a);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Ensure price group aligns nicely on small screens */
+.inner-title + .inner-price-new,
+.inner-title + .inner-price-old {
+  margin-top: 4px;
+}
+
+/* Small adjustments for .col-4 spacing in bootstrap-like grid */
+.col-4 .product-item {
+  min-height: 100%;
+}
+
+/* Responsive: stack in single column on narrow screens */
+@media (max-width: 767.98px) {
+  .col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .inner-title {
+    font-size: 0.98rem;
+  }
+  .inner-content {
+    padding: 12px;
+  }
+}
+
+/* Accessibility: focus state */
+.product-item:focus-within {
+  outline: 3px solid rgba(34,197,94,0.12);
+  outline-offset: 2px;
+}

@@ -1,0 +1,31 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+block main  
+    .container.my-3 
+        .row 
+            .col-12 
+                if(product.title)
+                    h2(class="mb-4") #{product.title}
+                if(product.price)
+                    div(class="mb-4") Gia: <b>#{product.price}$</b>
+                if(product.discountPercentage)
+                    div(class="mb-4") Giảm giá: <b>#{product.discountPercentage}%</b>
+                if(product.stock)
+                    div(class="mb-4") Con lai: <b>#{product.stock}</b>
+                if(product.thumbnail)
+                    div(class="mb-4")
+                        img(
+                            src=product.thumbnail 
+                            style "width: 100px"
+                        )
+
+                if(product.position)
+                    div(clas="mb-4") Vi tri: <b>#{product.position}</b>
+                if(product.description)
+                    div(clas="mb-4") #{product.description}</b>
+                a(
+                    href=`${prefixAdmin}/products/edit/${product.id}`
+                    class="btn btn-warning mt-4"
+
+                ) Chinh sua
+    script(src="/admin/js/products.js")
